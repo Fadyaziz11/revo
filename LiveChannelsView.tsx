@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Radio, Play, CheckCircle2, XCircle } from 'lucide-react';
-import { Channel } from '../types';
+import { Channel } from './index';
 
 interface LiveChannelsViewProps {
   channels: Channel[];
