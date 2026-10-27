@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Play, Plus, Check, Star, Clock, Calendar, Globe, User, Film } from 'lucide-react';
-import { Movie } from '../types';
+import { Movie } from './index';
 
 interface MovieDetailsModalProps {
   movie: Movie;
