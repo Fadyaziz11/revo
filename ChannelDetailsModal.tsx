@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Play, Radio, Globe, ShieldCheck, Activity } from 'lucide-react';
-import { Channel } from '../types';
+import { Channel } from './index';
 
 interface ChannelDetailsModalProps {
   channel: Channel;
