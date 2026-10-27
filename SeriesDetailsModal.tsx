@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Play, Plus, Check, Star, Calendar, Layers, Clock } from 'lucide-react';
-import { Series, Episode } from '../types';
-import { storage } from '../services/storage';
+import { Series, Episode } from './index';
+import { storage } from './storage';
 
 interface SeriesDetailsModalProps {
   series: Series;
