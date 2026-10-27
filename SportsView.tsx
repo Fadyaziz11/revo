@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Trophy, Play, Radio, Calendar } from 'lucide-react';
-import { FootballMatch } from '../types';
+import { FootballMatch } from './index';
 
 interface SportsViewProps {
   matches: FootballMatch[];
