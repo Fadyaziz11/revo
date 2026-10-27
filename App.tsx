@@ -4,28 +4,28 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
-import { HeroBanner } from './components/HeroBanner';
-import { CategoryFilters } from './components/CategoryFilters';
-import { MovieRow } from './components/MovieRow';
-import { SeriesRow } from './components/SeriesRow';
-import { ChannelRow } from './components/ChannelRow';
-import { RightSidebar } from './components/RightSidebar';
-import { VideoPlayerModal } from './components/VideoPlayerModal';
-import { MovieDetailsModal } from './components/MovieDetailsModal';
-import { SeriesDetailsModal } from './components/SeriesDetailsModal';
-import { MatchDetailsModal } from './components/MatchDetailsModal';
-import { ChannelDetailsModal } from './components/ChannelDetailsModal';
-import { SearchModal } from './components/SearchModal';
-import { UserModal } from './components/UserModal';
-import { MoviesView } from './components/MoviesView';
-import { SeriesView } from './components/SeriesView';
-import { LiveChannelsView } from './components/LiveChannelsView';
-import { SportsView } from './components/SportsView';
-import { Footer } from './components/Footer';
-import { AdminDashboard } from './admin/AdminDashboard';
-import { storage } from './services/storage';
-import { Movie, Series, Channel, FootballMatch, SiteSettings, UserProfile, VideoSource, Episode } from './types';
+import { Navbar } from './Navbar';
+import { HeroBanner } from './HeroBanner';
+import { CategoryFilters } from './CategoryFilters';
+import { MovieRow } from './MovieRow';
+import { SeriesRow } from './SeriesRow';
+import { ChannelRow } from './ChannelRow';
+import { RightSidebar } from './RightSidebar';
+import { VideoPlayerModal } from './VideoPlayerModal';
+import { MovieDetailsModal } from './MovieDetailsModal';
+import { SeriesDetailsModal } from './SeriesDetailsModal';
+import { MatchDetailsModal } from './MatchDetailsModal';
+import { ChannelDetailsModal } from './ChannelDetailsModal';
+import { SearchModal } from './SearchModal';
+import { UserModal } from './UserModal';
+import { MoviesView } from './MoviesView';
+import { SeriesView } from './SeriesView';
+import { LiveChannelsView } from './LiveChannelsView';
+import { SportsView } from './SportsView';
+import { Footer } from './Footer';
+import { AdminDashboard } from './AdminDashboard';
+import { storage } from './storage';
+import { Movie, Series, Channel, FootballMatch, SiteSettings, UserProfile, VideoSource, Episode } from './index';
 import { Bookmark, Play, Check } from 'lucide-react';
 
 export default function App() {
