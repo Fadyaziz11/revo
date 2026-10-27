@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, User, Moon, Shield, Bookmark, Play, X, Menu } from 'lucide-react';
-import { SiteSettings, UserProfile } from '../types';
+import { SiteSettings, UserProfile } from './index';
 
 interface NavbarProps {
   settings: SiteSettings;
