@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Tv, Play } from 'lucide-react';
-import { Series } from '../types';
+import { Series } from './index';
 
 interface SeriesViewProps {
   seriesList: Series[];
