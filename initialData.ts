@@ -1,4 +1,4 @@
-import { Movie, Series, Episode, Channel, FootballMatch, SiteSettings, AdminAuditLog } from '../types';
+import { Movie, Series, Episode, Channel, FootballMatch, SiteSettings, AdminAuditLog } from './index';
 
 export const SAMPLE_STREAMS = {
   hls1: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
