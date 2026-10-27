@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, User, Shield, LogOut, Check, Bookmark, Clock, Film } from 'lucide-react';
-import { UserProfile, Movie, Series } from '../types';
-import { storage } from '../services/storage';
+import { UserProfile, Movie, Series } from './index';
+import { storage } from './storage';
 
 interface UserModalProps {
   isOpen: boolean;
