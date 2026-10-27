@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Play, Radio, Calendar, MapPin, Mic, Trophy } from 'lucide-react';
-import { FootballMatch } from '../types';
+import { FootballMatch } from './index';
 
 interface MatchDetailsModalProps {
   match: FootballMatch;
