@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
-import { Series } from '../types';
+import { Series } from './index';
 
 interface SeriesRowProps {
   title: string;
