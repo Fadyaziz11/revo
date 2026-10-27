@@ -1,6 +1,6 @@
 import React from 'react';
 import { Play, Shield, Heart } from 'lucide-react';
-import { SiteSettings } from '../types';
+import { SiteSettings } from './index';
 
 interface FooterProps {
   settings: SiteSettings;
