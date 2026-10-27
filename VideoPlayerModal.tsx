@@ -13,8 +13,8 @@ import {
   Sparkles,
 } from 'lucide-react';
 import Hls from 'hls.js';
-import { VideoSource } from '../types';
-import { storage } from '../services/storage';
+import { VideoSource } from './index';
+import { storage } from './storage';
 
 interface VideoPlayerModalProps {
   title: string;
