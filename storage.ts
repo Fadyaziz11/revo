@@ -9,7 +9,7 @@ import {
   ViewEvent,
   PlaybackErrorLog,
   UserProfile,
-} from '../types';
+} from './index';
 import {
   INITIAL_MOVIES,
   INITIAL_SERIES,
@@ -18,7 +18,7 @@ import {
   INITIAL_MATCHES,
   INITIAL_SETTINGS,
   INITIAL_AUDIT_LOGS,
-} from '../data/initialData';
+} from './initialData';
 
 const STORAGE_KEYS = {
   MOVIES: 'watchnow_movies_v1',
