@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Play, Plus, Check } from 'lucide-react';
-import { Movie } from '../types';
+import { Movie } from './index';
 
 interface HeroBannerProps {
   movie: Movie;
