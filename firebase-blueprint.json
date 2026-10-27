@@ -1,0 +1,102 @@
+{
+  "entities": {
+    "Movie": {
+      "title": "Movie",
+      "description": "A film title available for streaming",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "slug": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "posterUrl": { "type": "string", "maxLength": 1000 },
+        "backdropUrl": { "type": "string", "maxLength": 1000 },
+        "year": { "type": "number" },
+        "rating": { "type": "number" },
+        "duration": { "type": "number" },
+        "published": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "slug", "description", "posterUrl", "year", "published"]
+    },
+    "Series": {
+      "title": "Series",
+      "description": "A TV series with seasons and episodes",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "slug": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "posterUrl": { "type": "string", "maxLength": 1000 },
+        "backdropUrl": { "type": "string", "maxLength": 1000 },
+        "startYear": { "type": "number" },
+        "seasonsCount": { "type": "number" },
+        "published": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "slug", "description", "posterUrl", "published"]
+    },
+    "Channel": {
+      "title": "Channel",
+      "description": "A live streaming TV channel",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 150 },
+        "nameAr": { "type": "string", "maxLength": 150 },
+        "slug": { "type": "string", "maxLength": 100 },
+        "logoUrl": { "type": "string", "maxLength": 1000 },
+        "category": { "type": "string", "maxLength": 50 },
+        "streamUrl": { "type": "string", "maxLength": 1500 },
+        "streamType": { "type": "string", "maxLength": 20 },
+        "isLive": { "type": "boolean" }
+      },
+      "required": ["name", "streamUrl", "isLive"]
+    },
+    "FootballMatch": {
+      "title": "FootballMatch",
+      "description": "A football match fixture and live score status",
+      "type": "object",
+      "properties": {
+        "kickoffTime": { "type": "string" },
+        "displayTime": { "type": "string", "maxLength": 20 },
+        "status": { "type": "string", "maxLength": 30 },
+        "channelName": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["kickoffTime", "status"]
+    },
+    "SiteSettings": {
+      "title": "SiteSettings",
+      "description": "Global website configuration and branding",
+      "type": "object",
+      "properties": {
+        "siteName": { "type": "string", "maxLength": 100 },
+        "accentColor": { "type": "string", "maxLength": 30 },
+        "contactEmail": { "type": "string", "maxLength": 150 }
+      },
+      "required": ["siteName"]
+    }
+  },
+  "firestore": {
+    "/movies/{movieId}": {
+      "schema": "Movie",
+      "description": "Collection of all movies on the platform"
+    },
+    "/series/{seriesId}": {
+      "schema": "Series",
+      "description": "Collection of TV series"
+    },
+    "/channels/{channelId}": {
+      "schema": "Channel",
+      "description": "Collection of live TV channels"
+    },
+    "/matches/{matchId}": {
+      "schema": "FootballMatch",
+      "description": "Football matches and schedules"
+    },
+    "/settings/{settingId}": {
+      "schema": "SiteSettings",
+      "description": "Website branding and settings"
+    }
+  }
+}

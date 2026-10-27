@@ -1,0 +1,6 @@
+{
+  "name": "WatchNow - منصة البث العربية المتكاملة",
+  "description": "منصة البث العربية المتكاملة لمشاهدة أحدث الأفلام والمسلسلات الحصرية وقنوات البث المباشر ومباريات كرة القدم مع لوحة تحكم إدارية شاملة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

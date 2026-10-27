@@ -1,0 +1,92 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (request.auth.token.email != null && request.auth.token.email.matches('.*@watchnow\\.tv$')) ||
+        request.auth.token.email == 'karimmagdy1830@gmail.com'
+      );
+    }
+
+    // Movies Collection
+    match /movies/{movieId} {
+      allow get: if isValidId(movieId) && (existing().published == true || isAdmin());
+      allow list: if resource.data.published == true || isAdmin();
+      allow create: if isAdmin() && isValidId(movieId) && incoming().title is string && incoming().title.size() <= 200;
+      allow update: if isAdmin() && isValidId(movieId) && incoming().title is string && incoming().title.size() <= 200;
+      allow delete: if isAdmin() && isValidId(movieId);
+    }
+
+    // Series Collection
+    match /series/{seriesId} {
+      allow get: if isValidId(seriesId) && (existing().published == true || isAdmin());
+      allow list: if resource.data.published == true || isAdmin();
+      allow create: if isAdmin() && isValidId(seriesId) && incoming().title is string;
+      allow update: if isAdmin() && isValidId(seriesId) && incoming().title is string;
+      allow delete: if isAdmin() && isValidId(seriesId);
+    }
+
+    // Episodes Collection
+    match /episodes/{episodeId} {
+      allow get: if isValidId(episodeId) && (existing().published == true || isAdmin());
+      allow list: if resource.data.published == true || isAdmin();
+      allow create, update, delete: if isAdmin() && isValidId(episodeId);
+    }
+
+    // Live Channels Collection
+    match /channels/{channelId} {
+      allow get: if isValidId(channelId);
+      allow list: if true;
+      allow create, update, delete: if isAdmin() && isValidId(channelId);
+    }
+
+    // Football Matches Collection
+    match /matches/{matchId} {
+      allow get: if isValidId(matchId);
+      allow list: if true;
+      allow create, update, delete: if isAdmin() && isValidId(matchId);
+    }
+
+    // Site Settings Collection
+    match /settings/{settingId} {
+      allow read: if isValidId(settingId);
+      allow write: if isAdmin() && isValidId(settingId);
+    }
+
+    // Admin Audit Logs Collection
+    match /adminAuditLogs/{logId} {
+      allow read, create: if isAdmin() && isValidId(logId);
+      allow update, delete: if false; // Audit logs are immutable
+    }
+
+    // Admins Collection
+    match /admins/{adminId} {
+      allow read: if isSignedIn() && (request.auth.uid == adminId || isAdmin());
+      allow write: if false; // Protected superadmin collection
+    }
+  }
+}
