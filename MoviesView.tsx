@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Film, Filter, Play, Star, ArrowUpDown } from 'lucide-react';
-import { Movie } from '../types';
+import { Movie } from './index';
 
 interface MoviesViewProps {
   movies: Movie[];
