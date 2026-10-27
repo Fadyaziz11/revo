@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight, Play, Radio } from 'lucide-react';
-import { Channel } from '../types';
+import { Channel } from './index';
 
 interface ChannelRowProps {
   title: string;
