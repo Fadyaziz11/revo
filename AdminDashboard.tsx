@@ -35,9 +35,9 @@ import {
   ViewEvent,
   PlaybackErrorLog,
   UserProfile,
-} from '../types';
-import { storage } from '../services/storage';
-import { isFirebaseConfigured, testFirestoreConnection } from '../services/firebaseConfig';
+} from './index';
+import { storage } from './storage';
+import { isFirebaseConfigured, testFirestoreConnection } from './firebaseConfig';
 
 interface AdminDashboardProps {
   onBackToSite: () => void;
